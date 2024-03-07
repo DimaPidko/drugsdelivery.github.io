@@ -33,7 +33,7 @@ function App() {
 
         try {
             const response = await axios.post(
-                'http://localhost:3306/user_order',
+                'http://sql303.infinityfree.com:3306/user_order',
                 userOrder
             );
 
@@ -89,7 +89,7 @@ function App() {
 
     const fetchShops = async () => {
         try {
-            const getShops = await axios.get('http://localhost:3306/shops');
+            const getShops = await axios.get('http://sql303.infinityfree.com:3306/shops');
             setShops(getShops.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -98,7 +98,7 @@ function App() {
 
     const fetchDrugs = async () => {
         try {
-            const getDrugs = await axios.get('http://localhost:3306/drugs');
+            const getDrugs = await axios.get('http://sql303.infinityfree.com:3306/drugs');
             const filterGetDrugs = getDrugs.data.filter(
                 (elem) => elem.store_name === currentShop
             );
