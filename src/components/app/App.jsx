@@ -4,6 +4,9 @@ import axios from 'axios';
 
 import Router from '../router/Router';
 
+import shopss from '../shops.json';
+import drugss from '../drugs.json';
+
 function App() {
     const [userOrder, setUserOrder] = useState({
         name: '',
@@ -11,7 +14,7 @@ function App() {
         phone: '',
         address: '',
     });
-    const [shops, setShops] = useState([]);
+    const [shops, setShops] = useState(shopss);
     const [currentShop, setCurrentShop] = useState('drugs24');
     const [currentCards, setCurrentCards] = useState([]);
     const [currentFilter, setCurrentFilter] = useState('price');
@@ -31,23 +34,22 @@ function App() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await axios.post(
-                'http://sql303.infinityfree.com:3306/user_order',
-                userOrder
-            );
+        console.log('Order submitted successfully:', userOrder);
 
-            console.log('Order submitted successfully:', response.data);
+        // try {
+        //     const response = await axios.post('http://db1.ho.ua/user_order', userOrder);
 
-            setUserOrder({
-                name: '',
-                email: '',
-                phone: '',
-                address: '',
-            });
-        } catch (error) {
-            console.error('Error submitting order:', error);
-        }
+        //     console.log('Order submitted successfully:', response.data);
+
+        //     setUserOrder({
+        //         name: '',
+        //         email: '',
+        //         phone: '',
+        //         address: '',
+        //     });
+        // } catch (error) {
+        //     console.error('Error submitting order:', error);
+        // }
     };
 
     const onChangeCurrentShop = (name) => {
@@ -87,19 +89,23 @@ function App() {
         localStorage.setItem('cart', JSON.stringify(cartStored));
     }, [cartStored]);
 
-    const fetchShops = async () => {
-        try {
-            const getShops = await axios.get('http://sql303.infinityfree.com:3306/shops');
-            setShops(getShops.data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+    // const fetchShops = () => {
+    //     // try {
+    //     //     const getShops = await axios.get('http://db1.ho.ua:3306/shops');
+    //     //     setShops(getShops.data);
+    //     // } catch (error) {
+    //     //     console.error('Error fetching data:', error);
+    //     // }
+    //     fetch('../shops.json')
+    //         .then((response) => response.json())
+    //         .then((json) => console.log(json));
+    // };
 
     const fetchDrugs = async () => {
         try {
-            const getDrugs = await axios.get('http://sql303.infinityfree.com:3306/drugs');
-            const filterGetDrugs = getDrugs.data.filter(
+            // const getDrugs = await axios.get('http://db1.ho.ua:3306/drugs');
+            const getDrugs = drugss;
+            const filterGetDrugs = getDrugs.filter(
                 (elem) => elem.store_name === currentShop
             );
             if (currentFilter === 'price') {
@@ -118,7 +124,7 @@ function App() {
     };
 
     useEffect(() => {
-        fetchShops();
+        // fetchShops();
         fetchDrugs();
     }, [currentShop, currentFilter]);
 
