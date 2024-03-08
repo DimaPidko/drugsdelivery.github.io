@@ -10,6 +10,8 @@ const Shop = (props) => {
                 onChangeCurrentShop={props.onChangeCurrentShop}
                 onChangeCurrentFilter={props.onChangeCurrentFilter}
                 currentFilter={props.currentFilter}
+                setIsAdmin={props.setIsAdmin}
+                isAdmin={props.isAdmin}
             />
             <Cards
                 currentCards={props.currentCards}

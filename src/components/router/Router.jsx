@@ -18,6 +18,8 @@ const Router = (props) => {
                             onChangeCurrentFilter={props.onChangeCurrentFilter}
                             currentFilter={props.currentFilter}
                             addToCart={props.addToCart}
+                            isAdmin={props.isAdmin}
+                            setIsAdmin={props.setIsAdmin}
                         />
                     }
                     path="/"

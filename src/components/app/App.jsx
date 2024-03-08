@@ -22,6 +22,7 @@ function App() {
         const storedCart = localStorage.getItem('cart');
         return storedCart ? JSON.parse(storedCart) : [];
     });
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const handleInputChange = (e) => {
         const { id, value } = e.target;
@@ -140,6 +141,8 @@ function App() {
             cartStored={cartStored}
             handleInputChange={handleInputChange}
             handleSubmit={handleSubmit}
+            isAdmin={isAdmin}
+            setIsAdmin={setIsAdmin}
         />
     );
 }
