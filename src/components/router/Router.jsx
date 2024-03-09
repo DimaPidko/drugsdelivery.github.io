@@ -30,6 +30,7 @@ const Router = (props) => {
                             cartStored={props.cartStored}
                             handleInputChange={props.handleInputChange}
                             handleSubmit={props.handleSubmit}
+                            userOrder={props.userOrder}
                         />
                     }
                     path="/cart"

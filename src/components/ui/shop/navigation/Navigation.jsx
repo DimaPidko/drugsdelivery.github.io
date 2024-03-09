@@ -14,6 +14,8 @@ const Navigation = (props) => {
         const trueLogin = admin[0].login;
         const truePass = admin[0].password;
         if (login === trueLogin && password === truePass) {
+            setLogin('');
+            setPassword('');
             props.setIsAdmin(true);
         } else {
             alert('DON`T DO IT');
@@ -30,6 +32,25 @@ const Navigation = (props) => {
             {props.isAdmin ? (
                 <>
                     <h2>Hello Admin</h2>
+                    <form action="createDrugs" onSubmit={}>
+                        <input
+                            type="text"
+                            placeholder="Enter name of drug"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Enter name of shop"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Enter link shop (if drugShop is 'Drug 24' link is 'drug24')"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Enter price"
+                        />
+                        <button>Create drug</button>
+                    </form>
                     <button onClick={() => props.setIsAdmin(false)}>Log Out</button>
                 </>
             ) : (

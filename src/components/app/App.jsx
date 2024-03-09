@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 import Router from '../router/Router';
 
@@ -14,6 +14,7 @@ function App() {
         phone: '',
         address: '',
     });
+    // eslint-disable-next-line no-unused-vars
     const [shops, setShops] = useState(shopss);
     const [currentShop, setCurrentShop] = useState('drugs24');
     const [currentCards, setCurrentCards] = useState([]);
@@ -32,10 +33,21 @@ function App() {
         }));
     };
 
+    // const handleCreateDrug = (e) => {
+    //     const {store_name, drug_name, price, img}
+    // };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         console.log('Order submitted successfully:', userOrder);
+
+        setUserOrder({
+            name: '',
+            email: '',
+            phone: '',
+            address: '',
+        });
 
         // try {
         //     const response = await axios.post('http://db1.ho.ua/user_order', userOrder);
@@ -143,6 +155,7 @@ function App() {
             handleSubmit={handleSubmit}
             isAdmin={isAdmin}
             setIsAdmin={setIsAdmin}
+            userOrder={userOrder}
         />
     );
 }

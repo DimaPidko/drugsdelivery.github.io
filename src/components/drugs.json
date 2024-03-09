@@ -54,5 +54,13 @@
         "price": 201,
         "img": "https://a.allegroimg.com/original/112c4f/1804b850419cb05069fb9675eca2/Paracetamol-Synoptis-500-mg-50-tabl-bol-goraczka",
         "cart": 0
+    },
+    {
+        "id": 8,
+        "store_name": "apteka911",
+        "drug_name": "Paracetamol",
+        "price": 201,
+        "img": "https://a.allegroimg.com/original/112c4f/1804b850419cb05069fb9675eca2/Paracetamol-Synoptis-500-mg-50-tabl-bol-goraczka",
+        "cart": 0
     }
 ]

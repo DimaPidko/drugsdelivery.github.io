@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import CartItems from './CartItems';
+import CartForm from './cartForm/CartForm';
 
 const Cart = (props) => {
     const [cartItems, setCartItems] = useState([]);
@@ -38,33 +39,11 @@ const Cart = (props) => {
                 <Link to="/">Shop</Link>
                 <Link to="/cart">Cart</Link>
             </ul>
-            <form onSubmit={props.handleSubmit}>
-                <input
-                    type="text"
-                    id="name"
-                    required
-                    onChange={props.handleInputChange}
-                />
-                <input
-                    type="email"
-                    id="email"
-                    required
-                    onChange={props.handleInputChange}
-                />
-                <input
-                    type="tel"
-                    id="phone"
-                    required
-                    onChange={props.handleInputChange}
-                />
-                <input
-                    type="text"
-                    id="address"
-                    required
-                    onChange={props.handleInputChange}
-                />
-                <button>SUBMIT</button>
-            </form>
+            <CartForm
+                handleSubmit={props.handleSubmit}
+                handleInputChange={props.handleInputChange}
+                userOrder={props.userOrder}
+            />
             <CartItems
                 cartItems={cartItems}
                 removeFromCart={removeFromCart}
