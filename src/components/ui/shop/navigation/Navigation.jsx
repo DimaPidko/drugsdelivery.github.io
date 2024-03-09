@@ -32,7 +32,7 @@ const Navigation = (props) => {
             {props.isAdmin ? (
                 <>
                     <h2>Hello Admin</h2>
-                    <form action="createDrugs" onSubmit={}>
+                    <form action="createDrugs">
                         <input
                             type="text"
                             placeholder="Enter name of drug"
