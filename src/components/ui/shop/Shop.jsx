@@ -1,11 +1,11 @@
 import Cards from './Cards/Cards';
-import Navigation from './navigation/Navigation';
+import Header from './navigation/Header';
 
 /* eslint-disable react/prop-types */
 const Shop = (props) => {
     return (
         <main>
-            <Navigation
+            <Header
                 shopsList={props.shopsList}
                 onChangeCurrentShop={props.onChangeCurrentShop}
                 onChangeCurrentFilter={props.onChangeCurrentFilter}
