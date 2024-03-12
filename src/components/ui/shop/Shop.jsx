@@ -1,10 +1,12 @@
 import Cards from './Cards/Cards';
 import Header from './navigation/Header';
 
+import styles from './Shop.module.sass';
+
 /* eslint-disable react/prop-types */
 const Shop = (props) => {
     return (
-        <main>
+        <main className={styles.wrapper}>
             <Header
                 shopsList={props.shopsList}
                 onChangeCurrentShop={props.onChangeCurrentShop}

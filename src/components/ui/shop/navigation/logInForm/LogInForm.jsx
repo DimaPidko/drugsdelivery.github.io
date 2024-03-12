@@ -7,22 +7,34 @@ const LogInForm = (props) => {
             {props.isAdmin ? (
                 <>
                     <h2>Hello Admin</h2>
-                    <form action="createDrugs">
+                    <form
+                        action="createDrugs"
+                        onSubmit={props.handleSubmit}
+                        className={styles.admin}>
                         <input
                             type="text"
                             placeholder="Enter name of drug"
+                            className={styles.formIn__inpt}
                         />
                         <input
                             type="text"
                             placeholder="Enter name of shop"
+                            className={styles.formIn__inpt}
                         />
                         <input
                             type="text"
-                            placeholder="Enter link shop (if drugShop is 'Drug 24' link is 'drug24')"
+                            placeholder="Enter img URL"
+                            className={styles.formIn__inpt}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Enter link shop ('drug24' if Drug 24)"
+                            className={styles.formIn__inpt}
                         />
                         <input
                             type="text"
                             placeholder="Enter price"
+                            className={styles.formIn__inpt}
                         />
                         <button>Create drug</button>
                     </form>
@@ -50,7 +62,7 @@ const LogInForm = (props) => {
                             className={styles.formIn__inpt}
                             id="password"
                         />
-                        <button>Login</button>
+                        <button className={styles.formIn__btn}>Login</button>
                     </form>
                 </div>
             )}

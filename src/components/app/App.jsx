@@ -40,14 +40,18 @@ function App() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('Order submitted successfully:', userOrder);
+        try {
+            console.log('Order submitted successfully:', userOrder);
 
-        setUserOrder({
-            name: '',
-            email: '',
-            phone: '',
-            address: '',
-        });
+            setUserOrder({
+                name: '',
+                email: '',
+                phone: '',
+                address: '',
+            });
+        } catch (error) {
+            console.log(error);
+        }
 
         // try {
         //     const response = await axios.post('http://db1.ho.ua/user_order', userOrder);
