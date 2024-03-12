@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
+
 import Shops from './shops/Shops';
 import { useState } from 'react';
 
+// import styles from './Header.module.sass';
+
 import admin from '../../../admin.json';
 import LogInForm from './logInForm/LogInForm';
+import NavButton from '../../navButton/NavButton';
 
 const Header = (props) => {
     const [login, setLogin] = useState('');
@@ -26,10 +29,7 @@ const Header = (props) => {
     return (
         <nav>
             <h2>Shops</h2>
-            <ul>
-                <Link to="/">Shop</Link>
-                <Link to="/cart">Cart</Link>
-            </ul>
+            <NavButton />
             <LogInForm
                 isAdmin={props.isAdmin}
                 setIsAdmin={props.setIsAdmin}
