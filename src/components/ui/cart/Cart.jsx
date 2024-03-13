@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import CartItems from './CartItems';
 import CartForm from './cartForm/CartForm';

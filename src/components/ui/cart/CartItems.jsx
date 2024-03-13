@@ -17,6 +17,7 @@ const CartItems = (props) => {
                         <div>
                             <input
                                 type="number"
+                                min="1"
                                 value={item.quantity}
                                 onChange={(e) =>
                                     props.updateQuantity(
